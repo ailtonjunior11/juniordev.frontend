@@ -1,0 +1,16 @@
+:root {
+  /* colors */
+  --primary-color: #1a202c;
+  --secondary-color: #283340d8;
+  --highlight-color: #00c822;
+  --text-color: #f3f4f6;
+
+  /* font family */
+  --font-family-primary: "Nunito Sans", sans-serif;
+
+  /* font weigth */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}

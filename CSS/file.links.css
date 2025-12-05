@@ -1,0 +1,11 @@
+@import "./global.css";
+@import "./roots.css";
+
+@import "../CSS/files/start.css";
+@import "../CSS/files/menu.css";
+@import "../CSS/files/services.css";
+@import "../CSS/files/projects.css";
+@import "../CSS/files/about.css";
+@import "../CSS/files/contacts.css";
+@import "../CSS/files/skills.css";
+@import "../CSS/files/footer.css";

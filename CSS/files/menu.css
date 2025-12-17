@@ -43,11 +43,11 @@ header {
   font-weight: var(--font-weight-regular);
   color: var(--text-color);
   transition: 0.3s ease-in-out;
+  opacity: 0.6;
 }
 
-.desktop-menu-list li a:hover,
-.logo:hover {
-  color: var(--highlight-color);
+.desktop-menu-list li a:hover {
+  opacity: 1;
 }
 
 .btn-contact {

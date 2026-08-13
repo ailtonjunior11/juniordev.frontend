@@ -2,82 +2,89 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   max-width: 60rem;
   width: 100%;
+  text-align: center;
 }
 
-form {
+.contacts-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  max-width: 40rem;
   width: 100%;
-  height: auto;
-  padding: 1.8rem;
-  border-radius: 0.5rem;
-  background: var(--secondary-color);
 }
 
-form h2 {
-  font-size: 1.7rem;
+.contacts-content h2 {
+  font-size: 2.5rem;
   font-weight: var(--font-weight-semibold);
   color: var(--text-color);
-  margin-bottom: 1rem;
-}
-
-.input-container {
-  display: flex;
-  flex-direction: column;
-  gap: 0.7rem;
-  width: 100%;
   margin-bottom: 0.5rem;
 }
 
-.input-container input {
+.contacts-subtitle {
   font-size: 1.1rem;
-  font-weight: var(--font-weight-regular);
-  padding: 0.7rem 1rem;
-  border-radius: 0.275rem;
-  background: var(--primary-color);
   color: var(--text-color);
+  opacity: 0.8;
+  margin-bottom: 2.5rem;
+  max-width: 40rem;
 }
 
-.input-container input[type="number"]::-webkit-outer-spin-button,
-.input-container input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.message {
+/* contact cards */
+.contact-cards {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
   width: 100%;
-  height: 8rem;
-  font-size: 1.1rem;
-  font-weight: var(--font-weight-regular);
-  padding: 0.7rem 1rem;
-  border-radius: 0.275rem;
-  background: var(--primary-color);
-  color: var(--text-color);
-  resize: none;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
 }
 
-.btn-submit {
-  display: inline-block;
-  max-width: fit-content;
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.8rem;
+  background: var(--secondary-color);
+  border-radius: 0.5rem;
   width: 100%;
-  margin-top: 0.5rem;
-  padding: 0.7rem 1.5rem;
-  font-size: 1.1rem;
+  max-width: 16rem;
+  transition: 0.3s ease-in-out;
+  border: 1px solid transparent;
+}
+
+.contact-card:hover {
+  border: 1px solid var(--highlight-color);
+  box-shadow: 0 0 1rem rgba(0, 200, 100, 0.2);
+  transform: translateY(-5px);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  color: var(--highlight-color);
+  margin-bottom: 1rem;
+}
+
+.card-icon i {
+  display: flex;
+}
+
+.card-info h3 {
+  font-size: 1.2rem;
   font-weight: var(--font-weight-semibold);
-  cursor: pointer;
-  background: var(--highlight-color);
   color: var(--text-color);
-  border-radius: 0.375rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-info a {
+  font-size: 1rem;
+  color: var(--text-color);
+  opacity: 0.8;
   transition: 0.3s ease-in-out;
 }
 
-.btn-submit:hover {
-  box-shadow: 0 0 0.3rem var(--highlight-color);
+.card-info a:hover {
+  color: var(--highlight-color);
 }
 
 /* estilo redes sociais */
@@ -85,52 +92,118 @@ form h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
-  gap: 0.8rem;
+  gap: 1.2rem;
+  margin-top: 1rem;
 }
 
 .redes-sociais span {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: var(--font-weight-semibold);
   color: var(--text-color);
 }
 
-.redes-sociais a i {
-  font-size: 2rem;
-  color: var(--text-color);
-  transition: 0.4s ease-in-out;
-  margin-right: 1rem;
+.icones-redes {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
 }
 
-.redes-sociais a i:hover {
-  transform: translateY(-2px);
+.redes-sociais a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background: var(--secondary-color);
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+  border: 1px solid var(--highlight-color);
+}
+
+.redes-sociais a i {
+  font-size: 1.8rem;
   color: var(--highlight-color);
-  text-shadow: 0 0 0.21rem var(--highlight-color);
+  transition: 0.3s ease-in-out;
+}
+
+.redes-sociais a:hover {
+  background: var(--highlight-color);
+  transform: translateY(-5px);
+  box-shadow: 0 0 1rem rgba(0, 200, 100, 0.3);
+}
+
+.redes-sociais a:hover i {
+  color: var(--primary-color);
 }
 
 /* responsividade */
 /* Telas medias / Telas pequenas */
 @media (max-width: 1000px) {
-  form h2 {
-    font-size: 1.5rem;
+  .contacts-content h2 {
+    font-size: 2rem;
   }
 
-  .input-container input,
-  .message {
+  .contacts-subtitle {
     font-size: 1rem;
   }
 
-  .btn-submit {
-    font-size: 1rem;
+  .contact-cards {
+    gap: 1rem;
+    margin-bottom: 2rem;
   }
 
-  .btn-submit:hover {
-    box-shadow: none;
+  .contact-card {
+    padding: 1.5rem;
+    max-width: 14rem;
   }
 
-  .redes-sociais a i:hover {
-    transform: none;
-    color: var(--text-color);
-    text-shadow: none;
+  .card-icon {
+    font-size: 2rem;
+  }
+
+  .icones-redes {
+    gap: 1.5rem;
+  }
+
+  .redes-sociais a {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+
+  .redes-sociais a i {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .contacts-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .contacts-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .contact-cards {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-card {
+    max-width: 100%;
+    padding: 1.2rem;
+  }
+
+  .icones-redes {
+    gap: 1rem;
+  }
+
+  .redes-sociais a {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .redes-sociais a i {
+    font-size: 1.4rem;
   }
 }

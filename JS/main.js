@@ -29,3 +29,28 @@ menuIcon.addEventListener("click", () => {
     menuMobileList.classList.add("show");
   }
 }); // Alterna a exibição dos ícones de menu aberto e fechado ao clicar no ícone do menu mobile.
+
+// Configuração GSAP
+const videoBg = document.querySelector(".video-background");
+
+gsap.registerPlugin(ScrollTrigger);
+
+function createVideoAnimation() {
+  gsap.to(videoBg, {
+    currentTime: videoBg.duration,
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".video-section",
+      start: "top top",
+      end: "+=3000",
+      scrub: 0.2,
+      pin: true,
+    },
+  });
+}
+
+if (videoBg.redyState >= 1) {
+  createVideoAnimation();
+} else {
+  videoBg.addEventListener("loadedmetadata", createVideoAnimation);
+}

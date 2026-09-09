@@ -1,19 +1,46 @@
-#start {
-  margin-top: 3rem;
-  gap: 4rem;
-  justify-content: center;
-  background: linear-gradient(
+#hero {
+  margin-top: 65px;
+  justify-content: start;
+  /* background: linear-gradient(
     360deg,
     var(--primary-color) 10%,
     var(--secondary-color) 50%
-  );
+  ); */
+  position: relative;
+  padding: 6.25rem 0;
+}
+
+/* Styles background */
+.video-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.video-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #1a202c8e;
+  z-index: 1;
+}
+
+.video-section {
+  background-color: var(--primary-color);
+}
+
+.video-section .main-content {
+  position: relative;
+  z-index: 2;
 }
 
 .main-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 50rem;
   width: 100%;
   gap: 2rem;
   padding: 2rem;
@@ -24,25 +51,29 @@
   flex-direction: column;
   align-items: flex-start;
   color: var(--text-color);
+  max-width: 35rem;
 }
 
 .text-container h1 {
-  font-size: 3.5rem;
+  font-size: 4.8rem;
   font-weight: var(--font-weight-bold);
+  line-height: 70px;
   margin-bottom: 0.5rem;
+  text-shadow: 0 0 10px #1a202c;
 }
 
 .text-container h2 {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-weight: var(--font-weight-semibold);
   margin-bottom: 1rem;
+  text-shadow: 0 0 10px #1a202c;
 }
 
 .text-container p {
-  font-size: 1.1rem;
   font-weight: var(--font-weight-light);
   font-style: italic;
   color: #f3f4f6d3;
+  text-shadow: 0 0 10px #1a202c;
 }
 
 .text-container p b {
@@ -64,22 +95,23 @@
   color: var(--text-color);
   transition: 0.2s ease-in-out;
   margin-right: 1.5rem;
+  box-shadow: 0 0 0.2rem var(--highlight-color);
 }
 
 .btn-action:hover {
-  box-shadow: 0 0 0.3rem var(--highlight-color);
+  box-shadow: 0 0 0.7rem var(--highlight-color);
 }
 
 /* imagem principal */
-.image-start {
+/* .image-hero {
   max-width: 34rem;
   width: 100%;
-}
+} */
 
 /* responsividade */
 /* Telas medias / Telas pequenas */
 @media (max-width: 1000px) {
-  #start {
+  #hero {
     justify-content: center;
     background: linear-gradient(215deg, #283340d8 40%, #1a202c 50%);
   }
@@ -107,9 +139,9 @@
     font-size: 1rem;
   }
 
-  .image-start {
+  /* .image-hero {
     display: none;
-  }
+  } */
 
   .btn-action:hover {
     box-shadow: none;
